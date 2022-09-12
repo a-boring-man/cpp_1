@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 09:50:07 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/12 14:55:51 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/12 15:07:23 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class	HumanB {
 		~HumanB();
 
 		void	attack() const;
-		void	setWeapon( Weapon type );
+		void	setWeapon( Weapon &type );
 
 	private :
 
