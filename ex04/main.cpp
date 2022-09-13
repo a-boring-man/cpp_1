@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 09:08:17 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/13 11:17:12 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/13 13:47:52 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,31 @@ int	main( int ac, char **av ) {
 	}
 	std::string		outfile_name = av[1];
 	std::string		remplace = av[2];
+	std::string		remplace_with = av[3];
 	std::string		tmp;
 	std::fstream	infile;
 	std::fstream	outfile;
 	std::size_t		pos;
+	int				i = 0;
 	
 	infile.open(av[1], std::ios::in);
-	outfile.open(outfile_name.append(".replace"), std::ios::out);
+	if (infile.failbit)
+	{
+		std::cout << "an error has occur opening the file, try again" << std::endl;
+		return (0);
+	}
+	outfile.open(outfile_name.append(".replace"), std::ios::out | std::ios::trunc);
 
 	while (!infile.eof())
 	{
 		getline(infile, tmp);
 		pos = tmp.find(av[2]);
-		if (pos != std::string::npos)
+		while (pos != std::string::npos)
 		{
-			std::cout << "-" << tmp.substr(pos, remplace.size()) << "-" << std::endl;
+			i++;
+			/*std::cout << "-" << */tmp.erase(pos, remplace.size())/* << "-" << std::endl*/;
+			/*std::cout << "-" << */tmp.insert(pos, remplace_with)/* << "-" << std::endl*/;
+			pos = tmp.find(av[2], pos + remplace.size() * i);
 		}
 		outfile << tmp << std::endl;
 	}
