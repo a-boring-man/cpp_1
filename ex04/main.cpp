@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 09:08:17 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/14 10:36:45 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/14 16:13:42 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	main( int ac, char **av ) {
 		std::cout << "i'll only accept 3 imput :" << std::endl << "- the first should be a file name" << std::endl << "- the second and third need to be a string" << std::endl;
 		return(1);
 	}
-	if (!av[1][0] || !av[2][0])
+	if (!av[1][0])
 	{
-		std::cout << "the first two argument can't be empty string, please try again" << std::endl;
+		std::cout << "the first argument can't be empty string, please try again" << std::endl;
 		return(1);
 	}
 
@@ -52,7 +52,10 @@ int	main( int ac, char **av ) {
 	while (!infile.eof())
 	{
 		getline(infile, tmp);
-		pos = tmp.find(av[2]);
+		if (av[2][0])
+			pos = tmp.find(av[2]);
+		else
+			pos = std::string::npos;
 
 		if (!first_getline)
 			outfile << std::endl;
