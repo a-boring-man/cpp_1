@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 10:39:39 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/14 13:15:17 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/14 13:20:20 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ void	Harl::complain( string level ) const {
 	while (level.compare(level_table[i]) && i < 4)
 		i++;
 	if (i < 4)
-		while (i < 4)
-			(this->*fct[i++])();
+		(this->*fct[i])();
 	else
 		cout << "Harl has nothing to say at least for now...." << endl;
 	return;

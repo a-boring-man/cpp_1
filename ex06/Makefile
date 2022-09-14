@@ -6,7 +6,7 @@
 #    By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/14 10:40:03 by jrinna            #+#    #+#              #
-#    Updated: 2022/09/14 10:47:36 by jrinna           ###   ########lyon.fr    #
+#    Updated: 2022/09/14 13:19:43 by jrinna           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRC := main.cpp Harl.cpp
 INC := Harl.hpp
 OBJ := ${SRC:.cpp=.o}
 
-NAME := Harl_2.0
+NAME := harlFilter
 CC := c++ -std=c++98
 CFLAGS := -Wall -Wextra -Werror
 
