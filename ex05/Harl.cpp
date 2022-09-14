@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 10:39:39 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/14 13:15:42 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/14 13:20:40 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 
 Harl::Harl( void ) {
 
-	cout << "Harl has been created and is probably seeking the manager" << endl;
+	cout << "Harl has been created and is probably seeking the manager" << endl << endl;
 	return;
 }
 
 Harl::~Harl( void ) {
 
-	cout << "Harl has been killed thank goodness..." << endl;
+	cout << endl << "Harl has been killed thank goodness..." << endl;
 	return;
 }
 
