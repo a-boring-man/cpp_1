@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 10:39:36 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/14 11:40:46 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/14 12:45:14 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,6 @@ class Harl {
 };
 
 typedef	void	(Harl::*HarlMemFn) ( void )	const;
+using std::cout;
+using std::endl;
+using std::string;
