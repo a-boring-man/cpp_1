@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 09:08:17 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/13 13:47:52 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/14 10:30:01 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,10 @@ int	main( int ac, char **av ) {
 	std::fstream	outfile;
 	std::size_t		pos;
 	int				i = 0;
+	bool			first_getline = true;
 	
 	infile.open(av[1], std::ios::in);
-	if (infile.failbit)
+	if (!infile.is_open())
 	{
 		std::cout << "an error has occur opening the file, try again" << std::endl;
 		return (0);
@@ -46,6 +47,10 @@ int	main( int ac, char **av ) {
 	{
 		getline(infile, tmp);
 		pos = tmp.find(av[2]);
+		if (!first_getline)
+			outfile << std::endl;
+		else
+			first_getline = false;
 		while (pos != std::string::npos)
 		{
 			i++;
@@ -53,7 +58,7 @@ int	main( int ac, char **av ) {
 			/*std::cout << "-" << */tmp.insert(pos, remplace_with)/* << "-" << std::endl*/;
 			pos = tmp.find(av[2], pos + remplace.size() * i);
 		}
-		outfile << tmp << std::endl;
+		outfile << tmp;
 	}
 
 	infile.close();
