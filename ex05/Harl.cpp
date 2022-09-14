@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 10:39:39 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/14 12:31:18 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/14 12:43:35 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	Harl::complain( string level ) const {
 	if (i < 4)
 		(this->*fct[i])();
 	else
-		cout << "Harl h"
+		cout << "Harl has nothing to say at least for now....";
 	return;
 }
 
