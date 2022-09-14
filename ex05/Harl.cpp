@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 10:39:39 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/14 12:48:20 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/14 13:15:42 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	Harl::complain( string level ) const {
 	string		level_table[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
 	int			i = 0;
 
-	while (level.compare(level_table[i]))
+	while (level.compare(level_table[i]) && i < 4)
 		i++;
 	if (i < 4)
 		(this->*fct[i])();
