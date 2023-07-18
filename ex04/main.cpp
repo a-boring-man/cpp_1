@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 09:08:17 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/14 16:13:42 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2023/07/18 17:27:12 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main( int ac, char **av ) {
 		std::cout << "an error has occur opening the file, try again" << std::endl;
 		return (0);
 	}
-	outfile.open(outfile_name.append(".replace"), std::ios::out | std::ios::trunc);
+	outfile.open(outfile_name.append(".replace").c_str(), std::ios::out | std::ios::trunc);
 	if (!outfile.is_open())
 	{
 		std::cout << "an error has occur opening the file, try again" << std::endl;

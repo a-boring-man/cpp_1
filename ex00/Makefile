@@ -6,7 +6,7 @@
 #    By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/08 11:47:19 by jrinna            #+#    #+#              #
-#    Updated: 2022/09/09 09:55:04 by jrinna           ###   ########lyon.fr    #
+#    Updated: 2023/07/18 17:22:37 by jrinna           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ ${NAME} : ${OBJ}
 	${CC} ${CFLAGS} ${OBJ} -o ${NAME}
 
 %.o : %.cpp ${INC} Makefile
-	${CC} ${CFLAGS} -c $< -o $@ -I
+	${CC} ${CFLAGS} -c $< -o $@ -I.
 
 all : ${NAME}
 
